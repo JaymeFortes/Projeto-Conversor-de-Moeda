@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 25px;
+    background: black;
+}
+h1{
+    text-align: center;
+    color: #08d508;
+}
+input, select {
+    padding: 15px;
+    margin: 15px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
