@@ -66,6 +66,7 @@ button:hover {
 
 .bandeiras {
     display: none; /* Ocultar por padrão */
+    justify-content: center;
     align-items: center; /* Alinhar itens ao centro */
     margin-top: 10px; /* Espaçamento superior */
 }
@@ -77,6 +78,9 @@ button:hover {
 
 img {
     transition: transform 0.3s ease;
+    width: 10%;
+    right: 500px;
+    left: 500px;
 }
 
 img:hover {

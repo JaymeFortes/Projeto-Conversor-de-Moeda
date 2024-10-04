@@ -4,8 +4,8 @@ async function converter() {
     const resultadoDiv = document.getElementById('resultado');
 
     // Ocultar todas as bandeiras
-    const bandeiras = document.querySelectorAll('.bandeiras');
-    bandeiras.forEach(bandeira => bandeira.style.display = 'none');
+    const bandeira = document.querySelectorAll('.bandeiras');
+    bandeira.forEach(bandeira => bandeira.style.display = 'none');
 
     if (isNaN(valor)) {
         resultadoDiv.innerHTML = "Por favor, insira o valor novamente.";
