@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Conversor de moeda</title>
@@ -8,21 +9,62 @@
 </head>
 <body>
 <h1>Conversor de moeda</h1>
-<input type="number" id="valor" placeholder="Valor">
+<div class="container">
+    <input type="number" id="valor" placeholder="Valor">
 
-<select id="moeda">
-    <option value="realParaDolar">Real para Dólar</option>
-    <option value="dolarParaReal">Dólar para Real</option>
-    <option value="realParaPeso">Real para Peso</option>
-    <option value="pesoParaReal">Peso para Real</option>
-    <option value="realParaEuro">Real para Euro</option>
-    <option value="euroParaReal">Euro para Real</option>
-</select>
+    <select id="moeda">
+        <option value="realParaDolar">Real para Dólar</option>
+        <option value="dolarParaReal">Dólar para Real</option>
+        <option value="realParaPeso">Real para Peso</option>
+        <option value="pesoParaReal">Peso para Real</option>
+        <option value="realParaEuro">Real para Euro</option>
+        <option value="euroParaReal">Euro para Real</option>
+    </select>
 
-<button onclick="converter()">Converter</button>
+    <div class="bandeiras">
+        <img id="bandeira-esquerda-real-dolar" src="photos/br.png" alt="Bandeira do Brasil" width="50px" height="30px">
+        <span class="seta">→</span>
+        <img id="bandeira-direita-real-dolar" src="photos/us.png" alt="Bandeira dos Estados Unidos" width="50px"
+             height="30px">
+    </div>
 
-<div class="result" id="resultado"></div>
+    <div class="bandeiras">
+        <img id="bandeira-esquerda-real-peso" src="photos/br.png" alt="Bandeira do Brasil" width="50px" height="30px">
+        <span class="seta">→</span>
+        <img id="bandeira-direita-real-peso" src="photos/ar.png" alt="Bandeira da Argentina" width="50px" height="30px">
+    </div>
 
+    <div class="bandeiras">
+        <img id="bandeira-esquerda-real-euro" src="photos/br.png" alt="Bandeira do Brasil" width="50px" height="30px">
+        <span class="seta">→</span>
+        <img id="bandeira-direita-real-euro" src="photos/es.png" alt="Bandeira da Espanha" width="50px" height="30px">
+    </div>
+
+    <div class="bandeiras">
+        <img id="bandeira-esquerda-dolar-real" src="photos/us.png" alt="Bandeira da Argentina" width="50px"
+             height="30px">
+        <span class="seta">→</span>
+        <img id="bandeira-direita-dolar-real" src="photos/br.png" alt="Bandeira da Argentina" width="50px"
+             height="30px">
+    </div>
+
+    <div class="bandeiras">
+        <img id="bandeira-esquerda-peso-real" src="photos/ar.png" alt="Bandeira da Argentina" width="50px"
+             height="30px">
+        <span class="seta">→</span>
+        <img id="bandeira-direita-peso-real" src="photos/br.png" alt="Bandeira do Brasil" width="50px" height="30px">
+    </div>
+
+    <div class="bandeiras">
+        <img id="bandeira-esquerda-euro-real" src="photos/es.png" alt="Bandeira do Brasil" width="50px" height="30px">
+        <span class="seta">→</span>
+        <img id="bandeira-direita-euro-real" src="photos/br.png" alt="Bandeira da Argentina" width="50px" height="30px">
+    </div>
+
+
+    <button onclick="converter()">Converter</button>
+    <div class="result" id="resultado"></div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

@@ -8,33 +8,94 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 25px;
-    background: #1e1e1e;
+    background: linear-gradient(135deg, #141e30, #243b55);
 }
 
 h1 {
-    text-align: center;
-    color: #08d508;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #07b107, #2bff8b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 input, select {
     padding: 15px;
     margin: 15px;
-    width: 200px;
-    background: #ffffff;
-    color: #1e1e1e;
+    width: 250px; /* Aumentar a largura */
+    background: #ffffff; /* Cor de fundo branca */
+    color: #1e1e1e; /* Cor do texto */
+    border: 2px solid #07b107; /* Borda verde */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efeitos de transição */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+input:focus, select:focus {
+    border-color: #2bff8b; /* Borda muda para verde mais claro ao focar */
+    box-shadow: 0 0 5px rgba(43, 255, 139, 0.5); /* Efeito de foco */
+    outline: none; /* Remove o contorno padrão */
+}
 
 button {
     padding: 10px 20px;
     margin: 10px;
 }
 
+button:hover {
+    background-color: #08d508;
+    box-shadow: 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .result {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 1.5em; /* Tamanho da fonte menor */
     font-weight: bold;
+    color: #2bff8b; /* Cor do texto do resultado */
+    background: rgba(255, 255, 255, 0.8); /* Fundo levemente transparente */
+    border: 2px solid #07b107; /* Borda verde */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
 
+.bandeiras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.seta {
+    font-size: 30px;
+    margin: 20px;
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
 }
 
 
