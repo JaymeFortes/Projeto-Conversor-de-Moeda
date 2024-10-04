@@ -3,6 +3,10 @@ async function converter() {
     const moeda = document.getElementById('moeda').value;
     const resultadoDiv = document.getElementById('resultado');
 
+    // Ocultar todas as bandeiras
+    const bandeiras = document.querySelectorAll('.bandeiras');
+    bandeiras.forEach(bandeira => bandeira.style.display = 'none');
+
     if (isNaN(valor)) {
         resultadoDiv.innerHTML = "Por favor, insira o valor novamente.";
         resultadoDiv.style.color = "#ff0000"; // Mensagem de erro em vermelho
@@ -26,84 +30,53 @@ async function converter() {
                 resultado = valor / data.rates.BRL * data.rates.USD; // Valor em reais para dólares
                 resultadoDiv.innerHTML = "R$ " + valor.toFixed(2) + " é equivalente a $ " + resultado.toFixed(2) + " dólares.";
                 resultadoDiv.style.color = "#08d508";
+                // Mostrar bandeiras correspondentes
+                document.getElementById('bandeira-esquerda-real-dolar').parentElement.style.display = 'flex';
                 break;
 
             case "dolarParaReal":
                 resultado = valor * data.rates.BRL; // Valor em dólares para reais
                 resultadoDiv.innerHTML = "$ " + valor.toFixed(2) + " é equivalente a R$ " + resultado.toFixed(2) + " reais.";
                 resultadoDiv.style.color = "#08d508";
+                // Mostrar bandeiras correspondentes
+                document.getElementById('bandeira-esquerda-dolar-real').parentElement.style.display = 'flex';
                 break;
 
             case "realParaPeso":
                 resultado = valor / data.rates.BRL * data.rates.MXN; // Valor em reais para pesos
                 resultadoDiv.innerHTML = "R$ " + valor.toFixed(2) + " é equivalente a $ " + resultado.toFixed(2) + " pesos.";
                 resultadoDiv.style.color = "#08d508";
+                // Mostrar bandeiras correspondentes
+                document.getElementById('bandeira-esquerda-real-peso').parentElement.style.display = 'flex';
                 break;
 
             case "pesoParaReal":
                 resultado = valor / data.rates.MXN * data.rates.BRL; // Valor em pesos para reais
                 resultadoDiv.innerHTML = "$ " + valor.toFixed(2) + " é equivalente a R$ " + resultado.toFixed(2) + " reais.";
                 resultadoDiv.style.color = "#08d508";
+                // Mostrar bandeiras correspondentes
+                document.getElementById('bandeira-esquerda-peso-real').parentElement.style.display = 'flex';
                 break;
 
             case "realParaEuro":
                 resultado = valor / data.rates.BRL * data.rates.EUR;
                 resultadoDiv.style.color = "#08d508";
                 resultadoDiv.innerHTML = "R$ " + valor.toFixed(2) + " é equivalente a € " + resultado.toFixed(2) + " euros";
+                // Mostrar bandeiras correspondentes
+                document.getElementById('bandeira-esquerda-real-euro').parentElement.style.display = 'flex';
                 break;
 
             case "euroParaReal":
                 resultado = valor / data.rates.EUR * data.rates.BRL;
                 resultadoDiv.style.color = "#08d508";
                 resultadoDiv.innerHTML = "€ " + valor.toFixed(2) + " é equivalente a R$ " + resultado.toFixed(2) + " reais";
+                // Mostrar bandeiras correspondentes
+                document.getElementById('bandeira-esquerda-euro-real').parentElement.style.display = 'flex';
                 break;
         }
-        //atualizarBandeiras()
-
     } catch (error) {
         console.error(error);
         resultadoDiv.innerHTML = "Erro ao obter dados da API.";
         resultadoDiv.style.color = "#ff0000"; // Mensagem de erro em vermelho
     }
 }
-/*
-function atualizarBandeiras() {
-    const moeda = document.getElementById('moeda').value;
-    const bandeiraEsquerda = document.getElementById('bandeiraEsquerda');
-    const bandeiraDireita = document.getElementById('bandeiraDireita');
-
-    switch (moeda) {
-        case "realParaDolar":
-            bandeiraEsquerda.src = "photos/br.png";
-            bandeiraDireita.src = "photos/us.png";
-            break;
-
-        case "dolarParaReal":
-            bandeiraEsquerda.src = "photos/us.png";
-            bandeiraDireita.src = "photos/br.png";
-            break;
-
-        case "realParaPeso":
-            bandeiraEsquerda.src = "photos/br.png";
-            bandeiraDireita.src = "photos/ar.png";
-            break;
-
-        case "pesoParaReal":
-            bandeiraEsquerda.src = "photos/ar.png";
-            bandeiraDireita.src = "photos/br.png";
-            break;
-
-        case "realParaEuro":
-            bandeiraEsquerda.src = "photos/br.png";
-            bandeiraDireita.src = "photos/es.png";
-            break;
-
-        case "euroParaReal":
-            bandeiraEsquerda.src = "photos/es.png";
-            bandeiraDireita.src = "photos/br.png";
-            break;
-    }
-
-}
-document.getElementById("moeda").addEventListener("chanche", atualizarBandeiras);
-*/

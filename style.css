@@ -24,20 +24,6 @@ h1 {
     padding: 10px;
     border-radius: 10px;
 }
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-}
-
-@media (min-width: 768px) {
-    .container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 input, select {
     padding: 15px;
     margin: 15px;
@@ -79,10 +65,9 @@ button:hover {
 }
 
 .bandeiras {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    display: none; /* Ocultar por padrão */
+    align-items: center; /* Alinhar itens ao centro */
+    margin-top: 10px; /* Espaçamento superior */
 }
 
 .seta {
@@ -97,5 +82,3 @@ img {
 img:hover {
     transform: scale(1.1);
 }
-
-
