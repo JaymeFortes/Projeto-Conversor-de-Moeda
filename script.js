@@ -43,7 +43,7 @@ async function converter() {
                 break;
 
             case "realParaPeso":
-                resultado = valor / data.rates.BRL * data.rates.MXN; // Valor em reais para pesos
+                resultado = valor / data.rates.BRL * data.rates.ARS; // Valor em reais para pesos
                 resultadoDiv.innerHTML = "R$ " + valor.toFixed(2) + " é equivalente a $ " + resultado.toFixed(2) + " pesos.";
                 resultadoDiv.style.color = "#08d508";
                 // Mostrar bandeiras correspondentes
@@ -51,7 +51,7 @@ async function converter() {
                 break;
 
             case "pesoParaReal":
-                resultado = valor / data.rates.MXN * data.rates.BRL; // Valor em pesos para reais
+                resultado = valor / data.rates.ARS * data.rates.BRL; // Valor em pesos para reais
                 resultadoDiv.innerHTML = "$ " + valor.toFixed(2) + " é equivalente a R$ " + resultado.toFixed(2) + " reais.";
                 resultadoDiv.style.color = "#08d508";
                 // Mostrar bandeiras correspondentes
